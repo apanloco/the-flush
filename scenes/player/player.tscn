@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://crkrnoeb55qr"]
+
+[ext_resource type="Texture2D" uid="uid://57re7360m4ud" path="res://graphics/player/player.png" id="1_gj84d"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ta4r7"]
+[ext_resource type="AudioStream" uid="uid://bpdi3twy28vae" path="res://sound/shoot.wav" id="3_hmgly"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4fv6g"]
+radius = 60.0333
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_ta4r7")
+
+[node name="PlayerIage" type="Sprite2D" parent="."]
+position = Vector2(39, -1)
+rotation = 1.5708
+texture = ExtResource("1_gj84d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4fv6g")
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_hmgly")
+
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="BulletSpawnPositions" type="Node2D" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="BulletSpawnPositions"]
+position = Vector2(130, 28)
+
+[node name="Marker2D2" type="Marker2D" parent="BulletSpawnPositions"]
+position = Vector2(130, 7)
+
+[node name="Marker2D3" type="Marker2D" parent="BulletSpawnPositions"]
+position = Vector2(134, 18)
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
