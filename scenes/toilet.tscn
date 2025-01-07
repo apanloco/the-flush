@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://crehm8fs3w5wi" path="res://graphics/objects/toilet.png" id="1_s5d0v"]
 [ext_resource type="Script" path="res://scenes/toilet.gd" id="2_w8djj"]
-[ext_resource type="AudioStream" uid="uid://ci230utn3kcxh" path="res://sound/flush.mp3" id="3_euwjs"]
+[ext_resource type="AudioStream" uid="uid://c5fnbg1jucoc0" path="res://sound/flush.ogg" id="3_o7ibj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a8mfh"]
 radius = 56.5685
@@ -12,7 +12,7 @@ texture = ExtResource("1_s5d0v")
 script = ExtResource("2_w8djj")
 
 [node name="FlushSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_euwjs")
+stream = ExtResource("3_o7ibj")
 volume_db = 10.0
 
 [node name="Area2D" type="Area2D" parent="."]

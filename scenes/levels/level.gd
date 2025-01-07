@@ -5,13 +5,14 @@ var player_scene: PackedScene = preload("res://scenes/player/player.tscn")
 
 var flushing: bool = false
 var FLUSH_FORCE_START: float = 500
-var FLUSH_FORCE_MODIFIER: float = 0.25
-var FLUSH_MAX_FORCE: float = 200000
+var FLUSH_FORCE_MODIFIER: float = 0.27
+var FLUSH_MAX_FORCE: float = 250000
 var flush_force: float
 
 func start() -> void:
 	$TimeToFlushSound.play()
 	$Music.play()
+	flushing = false
 	var player = player_scene.instantiate()
 	add_child(player)
 	player.reset()

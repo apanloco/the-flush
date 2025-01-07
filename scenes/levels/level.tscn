@@ -74,8 +74,12 @@ rotation = -1.17158
 position = Vector2(173, 506)
 rotation = -2.98194
 
+[node name="Fan13" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(207, 264)
+rotation = -1.51829
+
 [node name="Fan10" parent="Fans" instance=ExtResource("3_2hl22")]
-position = Vector2(1737, 688)
+position = Vector2(1733, 632)
 rotation = 1.8837
 scale = Vector2(1, 1)
 
@@ -92,11 +96,15 @@ position = Vector2(1260, 476)
 rotation = -1.61973
 
 [node name="Fan15" parent="Fans" instance=ExtResource("3_2hl22")]
-position = Vector2(1350, 918)
+position = Vector2(1294, 918)
 rotation = -1.89994
 
 [node name="Fan20" parent="Fans" instance=ExtResource("3_2hl22")]
-position = Vector2(1470, 638)
+position = Vector2(1560, 856)
+rotation = -2.78294
+
+[node name="Fan21" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1438, 630)
 rotation = -2.22243
 
 [node name="Fan16" parent="Fans" instance=ExtResource("3_2hl22")]
@@ -112,13 +120,13 @@ position = Vector2(1155, 234)
 rotation = -2.98194
 
 [node name="Fan19" parent="Fans" instance=ExtResource("3_2hl22")]
-position = Vector2(1134, 793)
+position = Vector2(1154, 739)
 rotation = -2.98194
 
 [node name="Bullets" type="Node" parent="."]
 
 [node name="RestartTimer" type="Timer" parent="."]
-wait_time = 27.0
+wait_time = 24.0
 one_shot = true
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
