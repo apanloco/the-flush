@@ -1,11 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://h4l6o551v8ny"]
+[gd_scene load_steps=3 format=3 uid="uid://h4l6o551v8ny"]
 
 [ext_resource type="Texture2D" uid="uid://du2ivvsipbe54" path="res://graphics/objects/Billboard.png" id="1_ycxv6"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywevo"]
+size = Vector2(1228, 40)
+
 [node name="Wall" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="Billboard" type="Sprite2D" parent="."]
 texture = ExtResource("1_ycxv6")
+region_enabled = true
+region_rect = Rect2(-1.5068, 28.7995, 1229.51, 40.8163)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(495, -63.7, 475.5, -64, 471.5, -59, 470.2, -59, 469.2, -55, 468, -55, 468, -39, -470.1, -39, -471, -55.1, -471, -57.5, -479, -63.5, -498.5, -64, -502.5, -59, -503.8, -59, -504.8, -55, -506, -55, -506, -39, -614, -39, -614, 28, -523.7, 28, -523, 30, -523, 32.5, -518, 36.4, -518, 37.8, -509.1, 40, -505, 40, -505, 55.5, -498, 61.5, -498, 62.8, -494, 63.8, -475.5, 64, -470.5, 57, -469, 57, -469, 39, -462.7, 39, -459.7, 37, -457.5, 37, -451, 28.3, 450.3, 28, 451, 30, 451, 32.5, 456, 36.4, 456, 37.8, 464.9, 40, 469, 40, 469, 55.5, 476, 61.5, 476, 62.8, 480, 63.8, 498.5, 64, 503.5, 57, 505, 57, 505, 39, 511.3, 39, 514.3, 37, 516.5, 37, 523, 28.3, 614, 28, 614, -39, 504, -39, 504, -55.4, 498, -61.4, 498, -62.7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ywevo")

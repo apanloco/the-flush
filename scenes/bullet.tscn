@@ -1,16 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://ywlaxmigdwmi"]
+[gd_scene load_steps=5 format=3 uid="uid://ywlaxmigdwmi"]
 
 [ext_resource type="Texture2D" uid="uid://dy40qoda8lamm" path="res://graphics/projectiles/grenade.png" id="1_cbdfb"]
+[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_e5144"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sf8ab"]
+bounce = 3.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q7blf"]
 radius = 74.0068
 
 [node name="Bullet" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 6
+mass = 2.0
+physics_material_override = SubResource("PhysicsMaterial_sf8ab")
+gravity_scale = 0.0
+linear_damp = 0.2
+script = ExtResource("1_e5144")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.1, 0.1)
 shape = SubResource("CircleShape2D_q7blf")
 
 [node name="Bullet" type="Sprite2D" parent="CollisionShape2D"]
-scale = Vector2(1, 1)
 texture = ExtResource("1_cbdfb")

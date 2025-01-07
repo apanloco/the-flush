@@ -8,9 +8,10 @@
 radius = 60.0333
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 5
 script = ExtResource("1_ta4r7")
 
-[node name="PlayerIage" type="Sprite2D" parent="."]
+[node name="PlayerImage" type="Sprite2D" parent="."]
 position = Vector2(39, -1)
 rotation = 1.5708
 texture = ExtResource("1_gj84d")
@@ -22,7 +23,7 @@ shape = SubResource("CircleShape2D_4fv6g")
 stream = ExtResource("3_hmgly")
 
 [node name="ShootTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.15
 one_shot = true
 
 [node name="BulletSpawnPositions" type="Node2D" parent="."]

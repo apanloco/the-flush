@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://pj5gn2qpwsju"]
+[gd_scene load_steps=7 format=3 uid="uid://pj5gn2qpwsju"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_wnwlu"]
 [ext_resource type="AudioStream" uid="uid://bv8mrxsh0x844" path="res://sound/timetoflush.wav" id="2_1lku5"]
-[ext_resource type="PackedScene" uid="uid://crkrnoeb55qr" path="res://scenes/player/player.tscn" id="2_3w2oy"]
 [ext_resource type="AudioStream" uid="uid://7i2mu74ycj7q" path="res://sound/spindelben1.mp3" id="3_1x33u"]
 [ext_resource type="PackedScene" uid="uid://br8cwgsmft3gq" path="res://scenes/fan.tscn" id="3_2hl22"]
 [ext_resource type="PackedScene" uid="uid://h4l6o551v8ny" path="res://wall.tscn" id="5_4w5qm"]
@@ -18,100 +17,110 @@ volume_db = 10.0
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1x33u")
 
-[node name="Fan" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(1442, 391)
-rotation = 1.85066
-scale = Vector2(3, 3)
-
-[node name="Fan9" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(798, 62)
-rotation = 3.95359
-scale = Vector2(3, 3)
-
-[node name="Fan10" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(1000, 513)
-rotation = 2.43901
-scale = Vector2(3, 3)
-
-[node name="Fan11" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(890, 860)
-rotation = 2.65626
-scale = Vector2(3, 3)
-
-[node name="Fan12" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(471, 853)
-rotation = 1.85066
-scale = Vector2(3, 3)
-
-[node name="Fan7" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(2195.66, -1147.04)
-rotation = 2.45393
-scale = Vector2(9, 9)
-
-[node name="Fan8" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(2195.66, -1147.04)
-rotation = 2.45393
-scale = Vector2(9, 9)
-
-[node name="Fan2" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(322, 378)
-rotation = -1.91463
-scale = Vector2(3, 3)
-
-[node name="Fan4" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(532, 112)
-rotation = -3.59014
-scale = Vector2(2.8, 2.8)
-
-[node name="Fan3" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(1380, 863)
-scale = Vector2(3, 3)
-
-[node name="Fan6" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(1391, 592)
-rotation = -0.897156
-
-[node name="Fan13" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(1125, 275)
-rotation = -1.61653
-
-[node name="Fan5" parent="." instance=ExtResource("3_2hl22")]
-position = Vector2(182, 669)
-rotation = -3.04545
-
-[node name="Wall5" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(1405, 102)
-rotation = 0.814181
-
-[node name="Wall4" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(463, -142)
-rotation = -0.180977
-
-[node name="Wall3" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(40, 771)
-rotation = 0.918359
-
-[node name="Wall6" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(473, 1135)
-rotation = 0.177161
-
-[node name="Wall2" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(1192, 1202)
-rotation = -0.0600508
-
-[node name="Wall" parent="." instance=ExtResource("5_4w5qm")]
-position = Vector2(1705, 582)
-rotation = 1.42121
-
 [node name="Toilet" parent="." instance=ExtResource("6_8dqft")]
-position = Vector2(1577, 738)
-rotation = -0.32216
+position = Vector2(1739, 916)
+rotation = -3.87155
 scale = Vector2(0.5, 0.5)
 
-[node name="Player" parent="." instance=ExtResource("2_3w2oy")]
-position = Vector2(65, 107)
-scale = Vector2(0.5, 0.5)
+[node name="Walls" type="Node" parent="."]
+
+[node name="Wall5" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(1842, 21)
+
+[node name="Wall4" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(612, 21)
+
+[node name="Wall3" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(21, 657)
+rotation = 1.5708
+
+[node name="Wall" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(1899, 656)
+rotation = 1.5708
+
+[node name="Wall6" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(615, 1060)
+
+[node name="Wall2" parent="Walls" instance=ExtResource("5_4w5qm")]
+position = Vector2(1845, 1060)
+
+[node name="Fans" type="Node" parent="."]
+
+[node name="Fan2" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(451, 165)
+rotation = -1.17158
+
+[node name="Fan3" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(303, 776)
+rotation = -1.17158
+
+[node name="Fan4" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(684, 815)
+rotation = 2.45379
+
+[node name="Fan5" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(528, 589)
+rotation = -1.17158
+
+[node name="Fan6" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(614, 345)
+rotation = 0.299487
+
+[node name="Fan7" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(871, 243)
+rotation = -1.17158
+
+[node name="Fan9" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(173, 506)
+rotation = -2.98194
+
+[node name="Fan10" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1737, 688)
+rotation = 1.8837
+scale = Vector2(1, 1)
+
+[node name="Fan11" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1677, 392)
+rotation = -2.21851
+
+[node name="Fan12" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1469, 248)
+rotation = -2.98194
+
+[node name="Fan14" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1260, 476)
+rotation = -1.61973
+
+[node name="Fan15" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1350, 918)
+rotation = -1.89994
+
+[node name="Fan20" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1470, 638)
+rotation = -2.22243
+
+[node name="Fan16" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(876, 541)
+rotation = -2.98194
+
+[node name="Fan18" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(924, 885)
+rotation = -2.98194
+
+[node name="Fan17" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1155, 234)
+rotation = -2.98194
+
+[node name="Fan19" parent="Fans" instance=ExtResource("3_2hl22")]
+position = Vector2(1134, 793)
+rotation = -2.98194
+
+[node name="Bullets" type="Node" parent="."]
+
+[node name="RestartTimer" type="Timer" parent="."]
+wait_time = 27.0
+one_shot = true
 
 [connection signal="finished" from="Music" to="." method="_on_music_finished"]
 [connection signal="body_flushed_toilet" from="Toilet" to="." method="_on_toilet_body_flushed_toilet"]
-[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
+[connection signal="timeout" from="RestartTimer" to="." method="_on_restart_timer_timeout"]
